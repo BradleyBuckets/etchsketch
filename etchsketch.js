@@ -1,6 +1,9 @@
 let grid = document.querySelector('.container')
 
-for (let i = 0; i < (16 * 16); i++) {
+let gridSide = 16
+document.documentElement.style.setProperty('--gridLength', gridSide);
+
+for (let i = 0; i < (gridSide * gridSide); i++) {
     let div = document.createElement('div');
     div.addEventListener('mouseover', backgroundToggle)
     div.classList.add(`div-${i}`);
