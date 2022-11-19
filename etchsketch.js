@@ -21,8 +21,11 @@ function blueBackround() {
     this.classList.add('blue')
 }
 
-let button = document.querySelector('.button')
-button.addEventListener('click', setGridSide)
+let sizeButton = document.querySelector('#size')
+let clearButton = document.querySelector('#clear')
+let colorButton = document.querySelector('#color')
+sizeButton.addEventListener('click', setGridSide)
+clearButton.addEventListener('click', clearBoard)
 function setGridSide() {
     clearBoard();
     let request = prompt('Please type in the size of one side of your grid', 16);
