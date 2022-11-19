@@ -13,8 +13,8 @@
 }
 
 .container {
-    height: 50vh;
-    width: 50vh;
+    height: 75vh;
+    width: 75vh;
     border: 1px solid black;
     border-radius: 5px;
     display: grid;
@@ -33,6 +33,27 @@
 }
 .blue {
     background-color: blue;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+.pink {
+    background-color: fuchsia;
+}
+.purple {
+    background-color: purple;
+}
+.orange {
+    background-color: orange;
+}
+.gray {
+    background-color: gray;
+}
+.yellow {
+    background-color: yellow;
 }
 
 .button {

@@ -1,7 +1,9 @@
-let grid = document.querySelector('.container')
-let gridSize = 16
+let grid = document.querySelector('.container');
+// let gridSize = 16;
+let number = 16;
+let cycle = 0
 
-createGrid(blackBackround, gridSize)
+createGrid(blackBackround, number);
 
 function createGrid(background, gridSide) {
     document.documentElement.style.setProperty('--gridLength', gridSide);
@@ -20,16 +22,38 @@ function blackBackround() {
 function blueBackround() {
     this.classList.add('blue')
 }
+function redBackround() {
+    this.classList.add('red')
+}
+function greenBackround() {
+    this.classList.add('green')
+}
+function purpleBackround() {
+    this.classList.add('purple')
+}
+function orangeBackround() {
+    this.classList.add('orange')
+}
+function grayBackround() {
+    this.classList.add('gray')
+}
+function yellowBackround() {
+    this.classList.add('yellow')
+}
+function pinkBackround() {
+    this.classList.add('pink')
+}
 
 let sizeButton = document.querySelector('#size')
 let clearButton = document.querySelector('#clear')
 let colorButton = document.querySelector('#color')
 sizeButton.addEventListener('click', setGridSide)
-clearButton.addEventListener('click', clearBoard)
+clearButton.addEventListener('click', resetBoard)
+colorButton.addEventListener('click', changeColor)
 function setGridSide() {
     clearBoard();
     let request = prompt('Please type in the size of one side of your grid', 16);
-    let number = parseInt(request)
+    number = parseInt(request)
     if (number > 100) {
         number = 100;
     }  
@@ -42,6 +66,26 @@ function setGridSide() {
 function clearBoard(){
     let squares = document.querySelectorAll('.div');
     for (let square of squares) {
-        square.classList.remove('black');
+        square.remove()
     }
+}
+
+function resetBoard() {
+    clearBoard();
+    createGrid(blackBackround, number)
+}
+
+function changeColor() {
+    clearBoard();
+    cycle += 1;
+    if (cycle > 8) cycle = 0;
+    if (cycle === 0) createGrid(blackBackround, number);
+    else if (cycle === 1) createGrid(blueBackround, number);
+    else if (cycle === 2) createGrid(redBackround, number);
+    else if (cycle === 3) createGrid(greenBackround, number);
+    else if (cycle === 4) createGrid(orangeBackround, number);
+    else if (cycle === 5) createGrid(yellowBackround, number);
+    else if (cycle === 6) createGrid(grayBackround, number);
+    else if (cycle === 7) createGrid(purpleBackround, number);
+    else if (cycle === 8) createGrid(pinkBackround, number);
 }
